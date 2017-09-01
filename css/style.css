@@ -1,0 +1,68 @@
+*{
+    /*border: solid 1px black;*/
+}
+header img{
+        display: inline-block;
+    width: 200px;
+}
+header h1{
+     display: inline-block;
+    position: absolute;
+    top: 50px;
+    left: 300px;
+
+}
+nav,nav ul,nav ul li,nav ul li a,aside ul{
+    margin: 0px;
+}
+nav ul,aside ul{
+        list-style: none;
+    padding: 0px;
+}
+nav ul li,aside ul{
+        padding: 0px;
+    display: inline-block;
+}
+nav ul li a{
+        text-decoration: none;
+    color: darkblue;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+nav ul li a:hover{
+    background-color:azure;  
+}
+/***************************************************************************FIN HEADER *************************
+*****************************************************/
+section{
+    width: 700px;
+    display: inline-block;
+}
+section article{
+        width: 220px;
+    display: inline-block;
+    margin-top: 1em;
+    margin-left: 3px;
+    margin-bottom: 1em;
+    background-color: rgba(158, 158, 158, 0.09);
+}
+section article img{
+    width: 220px;
+    display: inline-block;
+}
+section article h3{
+    
+}
+section article p{
+    font-size: small;
+}
+
+aside{
+       width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1em;
+}
+/***************************************************************************FIN CUERPO *************************
+*****************************************************/

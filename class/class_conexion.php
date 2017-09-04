@@ -13,10 +13,12 @@
             if(!($this->con)){
                 die("Error de conexion.".$this->con->error);
             }
-            echo "exito";
+            //echo "conexion exitosa desde el construct<br/>";
+            //echo "exito";
         }
         
         public function getConect(){
+            //echo "estoy enviando la conexion <br/>";
             return $this->con;
         }
     }

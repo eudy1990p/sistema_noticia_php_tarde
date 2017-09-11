@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
     <head>
@@ -38,10 +39,23 @@
                         CONTACTO
                     </a>
                 </li>
+                <?php if(isset($_SESSION["id"])){ ?>
+                <li>
+                    <a href="procesar/pro_salir_login.php">
+                        <?php echo $_SESSION["usuario"]; ?> DESEA SALIR? 
+                    </a>
+                </li>
+                <li>
+                    <a href="categoria.php">
+                        Categoria
+                    </a>
+                </li>
+                <?php }else{ ?>
                 <li>
                     <a href="login.php">
                         LOGIN
                     </a>
                 </li>
+                <?php } ?>
             </ul>
         </nav>

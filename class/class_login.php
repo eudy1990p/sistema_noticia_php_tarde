@@ -29,7 +29,7 @@ class Login{
                 $_SESSION["usuario"] = $datosUsuario->nombre; 
                 $_SESSION["rol"] = $datosUsuario->rol;
                 $_SESSION["id"] = $datosUsuario->id;
-                header("location:../pruebasesion.php");
+                header("location:../index.php");
                
             }else{
                 //echo "no puede entrar";

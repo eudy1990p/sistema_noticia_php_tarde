@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require_once("class/class_ini.php"); ?>
 <!doctype html>
 <html>
     <head>

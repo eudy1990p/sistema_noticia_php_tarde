@@ -1,6 +1,7 @@
 <?php
     require_once("../class/class_ini.php");
     $categoria = new Categoria($conexion->getConect());
+
     if(isset($_POST["accion"])){
         switch($_POST["accion"]){
             case "agregar":
@@ -8,10 +9,18 @@
                 $categoria->insert();
                 break;
                 
+            case "editar":
+                $categoria->editar($_POST["id"],$_POST["nombre"]);
+                break;
+                
         }
-        
-        header("location:../categoria.php");
-        
+           
     }
+    
+    if(isset($_GET["eliminarID"])){
+        
+        $categoria->eliminar($_GET["eliminarID"]);
+    }    header("location:../categoria.php");
+     
 
 ?>

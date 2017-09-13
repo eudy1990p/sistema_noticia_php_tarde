@@ -2,6 +2,7 @@
     require_once("header.php");
  
 $nombre = "";
+$cuerpo =""; 
 $accion = "agregar";
 $id = "";
     if(isset($_GET["activarEditar"])){
@@ -14,17 +15,38 @@ $id = "";
     
 ?>
   <section>
-        <h2>Categoria</h2>
-            <form action="procesar/pro_categoria.php" method="post" >
+        <h2>Notacia</h2>
+            <form action="procesar/pro_noticia.php" method="post" enctype="multipart/form-data" >
                 <input name="accion" value="<?php echo $accion; ?>" type="hidden" />
                 <?php if($activarEditar){ ?>
                 <input name="id" value="<?php echo $id; ?>" type="hidden" />
                 <?php } ?>
-                Nombre <br/>
+                Categoria<br/>
+                <select name="idCategoria">
+                    <?php
+    
+        $queryCategoria=$categoria->getCategorias();
+        while($registroCategoria = $queryCategoria->fetch_object()){    
+            ?>
+                <option value="<?php echo $registroCategoria->id; ?>" ><?php echo $registroCategoria->nombre; ?></option>
+            <?php } ?>
+                </select><br/><br/>
                 
-                <input name="nombre" type="text" placeholder="Nombre Categoria" value="<?php  echo  $nombre; ?>" /><br/> <br/> 
+                Titulo <br/>
+                
+                <input name="titulo" type="text" placeholder="Titulo" value="<?php  echo  $nombre; ?>" /><br/> <br/>
+                
+                Cuerpo <br/>
+                <textarea name="cuerpo" type="text" placeholder="Cuerpo" value="<?php  echo  $cuerpo; ?>" ></textarea><br/> <br/>
+                
+                Subir imagen<br/>
+                <input type="file" name="imagen"/><br/><br/>
+                
+                
+                
+                
                 <?php if($activarEditar){ ?>
-                <a href="categoria.php">Cancelar</a>
+                <a href="noticias.php">Cancelar</a>
                 <button type="submit">Editar</button> 
                 <?php }else{ ?>                                             <button type="submit">Agregar</button>
                 <?php } ?>

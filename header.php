@@ -50,6 +50,11 @@
                         Categoria
                     </a>
                 </li>
+                <li>
+                    <a href="noticias.php">
+                    Noticia
+                    </a>
+                </li>
                 <?php }else{ ?>
                 <li>
                     <a href="login.php">

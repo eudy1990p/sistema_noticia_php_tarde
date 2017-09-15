@@ -6,7 +6,7 @@
             $query=$categoria->getCategorias();
             while($registro = $query->fetch_object()){    
                 ?>
-                <li><a href="#"><?php echo  strtoupper($registro->nombre); ?></a></li>
+                <li><a href="mostra_por_categoria.php?id_categoria=<?php echo  $registro->id; ?>"><?php echo  strtoupper($registro->nombre); ?></a></li>
                 <?php } ?>
             </ul>
         </aside>

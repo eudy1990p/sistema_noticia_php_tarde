@@ -15,7 +15,7 @@ $id = "";
     
 ?>
   <section>
-        <h2>Notacia</h2>
+        <h2>Noticia</h2>
             <form action="procesar/pro_noticia.php" method="post" enctype="multipart/form-data" >
                 <input name="accion" value="<?php echo $accion; ?>" type="hidden" />
                 <?php if($activarEditar){ ?>
@@ -55,19 +55,23 @@ $id = "";
             <table>
                 <tr>
                     <th>Operacion</th>
+                    <th>Imagen</th>
                     <th>ID</th>
                     <th>Nombre</th>
                 </tr>
                 <?php
     
-        $query=$categoria->getCategorias();
+        $query=$noticia->getNoticias();
         while($registro = $query->fetch_object()){    
             ?>
                 <tr>
                     <td><a href="?activarEditar=<?php echo $registro->id; ?>">Editar</a><br/>
-                    <a onclick="confirmarEliminar('procesar/pro_categoria.php?eliminarID=<?php echo $registro->id; ?>');" href="javascript:void(0);">Eliminar</a></td>
+                    <a onclick="confirmarEliminar('procesar/pro_noticia.php?eliminarID=<?php echo $registro->id; ?>');" href="javascript:void(0);">Eliminar</a></td>
+                    <td>
+                        <img width="50" height="50" src="upload_img/<?php echo $registro->url_img; ?>" />
+                        </td>
                     <td><?php echo $registro->id; ?></td>
-                    <td><?php echo $registro->nombre; ?></td>
+                    <td><?php echo $registro->titulo; ?></td>
                 </tr>
         
         <?php } ?>

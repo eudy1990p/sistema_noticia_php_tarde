@@ -52,23 +52,33 @@
                 
         }
         public function eliminar($id){
-             echo $sql = "delete from categorias
+             echo $sql = "delete from noticias
               where id=".$id."
               ";
               $query = $this->con->query($sql);
                 
         }
-        public function getCategorias(){
-              $sql = "select * from categorias";
+        public function getNoticias(){
+              $sql = "select * from noticias order by id desc";
+              $query = $this->con->query($sql);
+            return $query;
+        }
+        public function getNoticiasUltimo9(){
+              $sql = "select * from noticias order by id desc limit 9";
+              $query = $this->con->query($sql);
+            return $query;
+        }
+        public function getNoticiasPorCategoria($idCategoria){
+             $sql = "select * from noticias where categoria_id='".$idCategoria."' order by id desc";
               $query = $this->con->query($sql);
             return $query;
         }
         
-        public function getCategoria($id){
-              $sql = "select * from categorias where id=".$id." ";
+        public function getNoticia($id){
+              $sql = "select * from noticias where id=".$id."  ";
               $query = $this->con->query($sql);
-             $RCategoria =$query->fetch_object();
-            return $RCategoria;
+             $RNoticia =$query->fetch_object();
+            return $RNoticia;
         }
         
     }

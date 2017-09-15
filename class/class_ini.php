@@ -7,5 +7,6 @@
 
     $conexion = new conexion();
     $categoria = new Categoria($conexion->getConect());
+$noticia = new Noticia($conexion->getConect());
     
 ?>

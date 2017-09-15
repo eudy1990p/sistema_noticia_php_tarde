@@ -1,6 +1,6 @@
 <?php
     require_once("../class/class_ini.php");
-    $noticia = new Noticia($conexion->getConect());
+    //$noticia = new Noticia($conexion->getConect());
     
 
     if(isset($_POST["accion"])){
@@ -21,7 +21,7 @@ $noticia->insert();
     
     if(isset($_GET["eliminarID"])){
         
-        $categoria->eliminar($_GET["eliminarID"]);
+        $noticia->eliminar($_GET["eliminarID"]);
     }    header("location:../noticias.php");
      
 

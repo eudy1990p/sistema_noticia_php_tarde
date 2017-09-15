@@ -3,80 +3,20 @@
 ?>
         <!--- -------------------------------->
         <section>
+            <?php
+    
+        $query=$noticia->getNoticiasUltimo9();
+        while($registro = $query->fetch_object()){    
+            ?>
             <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
+                <img src="upload_img/<?php echo $registro->url_img; ?>" alt="IMG Article" />
+                <h3><?php echo $registro->titulo; ?></h3>
                 <p>
-                    <a href="#"> leer mas</a>
+                    <?php echo substr($registro->cuerpo,0,20); ?>
+                    <a href="detalle_noticia.php?noticia_id=<?php echo $registro->id; ?>"> leer mas</a>
                 </p>
             </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
-            
-            
-            <article>
-                <img src="" alt="IMG Article" />
-                <h3>titulo article</h3>
-                <p>
-                    <a href="#"> leer mas</a>
-                </p>
-            </article>
+            <?php } ?>
             
             
         </section>

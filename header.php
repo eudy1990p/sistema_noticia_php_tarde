@@ -20,12 +20,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="comida.php">
+                    <a href="comida.php?id_categoria=13">
                         COMIDA
                     </a>
                 </li>
                 <li>
-                    <a href="informatica.php">
+                    <a href="informatica.php?id_categoria=14">
                         INFORMATICA
                     </a>
                 </li>
